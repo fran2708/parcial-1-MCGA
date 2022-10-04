@@ -5,15 +5,16 @@ const userRoutes = require("./routes/products");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-//middleware
+
 app.use(express.json());
 app.use("/api", userRoutes);
-//routes
+
+// routes
 app.get("/", (req, res) => {
   res.send("welcome to my api");
 });
 
-//mongodb connection
+// mongodb connection
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("mongodb connection was successful 🟢"))

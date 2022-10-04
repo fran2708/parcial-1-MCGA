@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const productSchema = require("../models/Products");
 
-//create product
+// create product
 router.post("/products", (req, res) => {
   const product = productSchema(req.body);
   product
@@ -11,7 +11,7 @@ router.post("/products", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//get all products
+// get all products
 router.get("/products", (req, res) => {
   productSchema
     .find()
@@ -19,7 +19,7 @@ router.get("/products", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//get a specific product
+// get a specific product
 router.get("/products/:id", (req, res) => {
   const { id } = req.params;
   productSchema
@@ -28,7 +28,7 @@ router.get("/products/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//update a product
+// update a product
 router.put("/products/:id", (req, res) => {
   const { id } = req.params;
   const { name, price, stock, description } = req.body;
@@ -38,7 +38,7 @@ router.put("/products/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//delete a product
+// delete a product
 router.put("/products/:id", (req, res) => {
   const { id } = req.params;
   productSchema
