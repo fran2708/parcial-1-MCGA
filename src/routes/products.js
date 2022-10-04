@@ -39,10 +39,10 @@ router.put("/products/:id", (req, res) => {
 });
 
 // delete a product
-router.put("/products/:id", (req, res) => {
+router.put("/products/delete/:id", (req, res) => {
   const { id } = req.params;
   productSchema
-    .remove({ _id: id })
+    .deleteOne({ _id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
