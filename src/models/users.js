@@ -5,15 +5,31 @@ const userSchema = mongoose.Schema({
     type: "string",
     required: true,
   },
-  price: {
+  lastname: {
+    type: "string",
+    required: true,
+  },
+  dateofbirth: {
+    type: "date",
+    required: true,
+  },
+  dni: {
     type: "number",
     required: true,
   },
-  stock: {
+  age: {
     type: "number",
     required: true,
   },
-  description: {
+  nationality: {
+    type: "string",
+    required: true,
+  },
+  email: {
+    type: "string",
+    required: true,
+  },
+  password: {
     type: "string",
     required: true,
   },
